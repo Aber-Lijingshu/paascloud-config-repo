@@ -27,6 +27,7 @@ security:
       access-token-uri: http://paascloud-gateway:7979/uac/oauth/token
       user-authorization-uri: http://paascloud-gateway:7979/uac/oauth/authorize
     resource:
+      id: paascloud-client-zipkin
       user-info-uri: http://paascloud-gateway:7979/uac/user
       prefer-token-info: false
       jwt:
@@ -35,13 +36,9 @@ security:
 paascloud:
   oauth2:
     client:
-#      id: ${security.oauth2.resource.id}
-#      accessTokenUrl: ${security.oauth2.client.access-token-uri}
-#      clientId: ${security.oauth2.client.clientId}
-#      clientSecret: ${security.oauth2.client.clientSecret}
       id: ${security.oauth2.resource.id}
-      accessTokenUrl: http://paascloud-gateway:7979/uac/oauth/token
-      clientId: paascloud-client-zipkin
-      clientSecret: paascloudClientSecret
+      accessTokenUrl: ${security.oauth2.client.access-token-uri}
+      clientId: ${security.oauth2.client.clientId}
+      clientSecret: ${security.oauth2.client.clientSecret}
       clientAuthenticationScheme: header
       tokenStore: jwt
