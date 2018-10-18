@@ -3,6 +3,8 @@ spring:
     cache-names: tpc-cache
   datasource:
     url: jdbc:mysql://paascloud-db-mysql:3307/paascloud_tpc?characterEncoding=utf8&useSSL=false
+    username: aber
+    password: 123456
 
 liquibase:
   change-log: classpath:liquibase/index.xml
@@ -35,6 +37,7 @@ security:
       access-token-uri: http://paascloud-gateway:7979/uac/oauth/token
       user-authorization-uri: http://paascloud-gateway:7979/uac/oauth/authorize
     resource:
+      id: paascloud-client-mdc
       user-info-uri: http://paascloud-gateway:7979/uac/user
       prefer-token-info: false
       jwt:
