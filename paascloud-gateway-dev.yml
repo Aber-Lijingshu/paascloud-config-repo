@@ -99,6 +99,7 @@ security:
       access-token-uri: http://paascloud-gateway:7979/uac/oauth/token
       user-authorization-uri: http://paascloud-gateway:7979/uac/oauth/authorize
     resource:
+      id: paascloud-client-gateway
       user-info-uri: http://paascloud-gateway:7979/uac/user
       prefer-token-info: false
       jwt:
